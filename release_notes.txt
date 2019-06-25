@@ -1,0 +1,14 @@
+use request_pro
+
+// Users
+db.createCollection('users')
+db.users.insert({'user_id': 1, 'role_id': 1, 'email': 'abin@gmail.com', 'password': 'Test123' 'name': 'Abin Thaha Azeez'})
+
+// Roles
+db.createCollection('roles')
+db.roles.insert({'role_id': 1, 'role': 'Admin'})
+db.roles.insert({'role_id': 2, 'role': 'User'})
+
+// Tickets
+db.createCollection('tickets')
+db.tickets.insert({'ticket_id': 123, 'description': 'Ticket', 'type': 'Service', 'crated_by': 'abin@gmail.com', 'status': 'In progress', 'closed_by': '', 'created_date': new Date()})

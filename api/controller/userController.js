@@ -49,6 +49,7 @@ var userController = {
             console.log("error when Get users", err)
         })
     },
+    
     login: (req, res) => {
         const { error, isValid } = validateLoginInput(req.body);
         if (!isValid) {
