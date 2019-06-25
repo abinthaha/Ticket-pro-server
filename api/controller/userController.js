@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const validateRegisterInput = require("../../validation/registerValidator");
 const validateLoginInput = require("../../validation/loginValidator");
-const keys =require("../../config/key")
+const keys = require("../../config/key")
 const User = require("../../models/User");
 
 var userController = {
@@ -84,7 +84,9 @@ var userController = {
                                 }
                             );
                         }
-
+                        else {
+                            res.status(404).json("Invalid password")
+                        }
                     });
                 }
             })

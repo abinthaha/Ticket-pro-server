@@ -11,4 +11,9 @@ db.roles.insert({'role_id': 2, 'role': 'User'})
 
 // Tickets
 db.createCollection('tickets')
-db.tickets.insert({'ticket_id': 123, 'description': 'Ticket', 'type': 'Service', 'crated_by': 'abin@gmail.com', 'status': 'In progress', 'closed_by': '', 'created_date': new Date()})
+db.tickets.insert({'ticket_id': 123, 'description': 'Ticket', 'type': 1, 'crated_by': 'abinthaha@gmail.com', 'status': 1, 'closed_by': '', 'created_date': new Date()})
+
+
+// Comments
+db.createCollection('comments')
+db.comments.insert({'id': new Date().getTime(), 'ticket_id': '1561456326041', 'date': new Date(), 'comment': 'Ticket Created', 'created_by': 'admin@request_pro.com', 'closed_by': ''})
