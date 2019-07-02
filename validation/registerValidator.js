@@ -9,7 +9,6 @@ module.exports = function validateRegisterInput(data) {
     data.email = !isEmpty(data.email) ? data.email : "";
     data.password = !isEmpty(data.password) ? data.password : "";
     data.confirm_password = !isEmpty(data.confirm_password) ? data.confirm_password : "";
-    data.user_id = !isEmpty(data.user_id) ? data.user_id : "";
     data.role_id = !isEmpty(data.role_id) ? data.role_id : "";
     // Name checks
     if (Validator.isEmpty(data.name)) {
@@ -28,12 +27,6 @@ module.exports = function validateRegisterInput(data) {
     if (Validator.isEmpty(data.confirm_password)) {
         errors.confirm_password = "Confirm password field is required";
     }
-    // if (Validator.isEmpty(data.user_id)) {
-    //     errors.user_id = "user_id field is required";
-    // }
-    // if (Validator.isEmpty(data.role_id)) {
-    //     errors.role_id = "role_id field is required";
-    // }
     if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
         errors.password = "Password must be at least 6 characters";
     }

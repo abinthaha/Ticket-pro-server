@@ -20,7 +20,6 @@ var userController = {
             }
             else {
                 const newUser = new User({
-                    user_id: req.body.user_id,
                     name: req.body.name,
                     email: req.body.email,
                     password: req.body.password,
@@ -43,7 +42,7 @@ var userController = {
     },
 
     getAllUsers: (req, res) => {
-        User.find().then(users => {
+        User.find({role_id: 1}).then(users => {
             res.send(users)
         }).catch(err => {
             console.log("error when Get users", err)
@@ -67,7 +66,9 @@ var userController = {
                             // Create JWT Payload
                             const payload = {
                                 id: user.id,
-                                name: user.name
+                                name: user.name,
+                                role_id: user.role_id,
+                                email: user.email
                             };
                             // Sign token
                             jwt.sign(

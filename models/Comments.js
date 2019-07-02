@@ -10,10 +10,6 @@ const CommentSchema = new Schema({
         type: String,
         required: true
     },
-    created_by: {
-        type: String,
-        required: true
-    },
     date: {
         type: Date,
         default: Date.now
@@ -21,9 +17,6 @@ const CommentSchema = new Schema({
     comment: {
         type: String,
         required: true
-    },
-    closed_by: {
-        type: String
     }
 });
 module.exports = Comments = mongoose.model("comments", CommentSchema);
