@@ -16,9 +16,7 @@ var ticketController = {
                 id: 'comment_' + new Date().getTime(),
                 ticket_id: req.body.ticket_id,
                 comment: req.body.comment,
-                date: new Date(),
-                created_by: req.body.created_by,
-                closed_by: '',
+                date: new Date()
             });
             newComment
                 .save()

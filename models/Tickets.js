@@ -30,7 +30,7 @@ const TicketsSchema = new Schema({
         type: Number,
         required: true
     },
-    closed_by: {
+    assigned_to: {
         type: String
     }
 });
