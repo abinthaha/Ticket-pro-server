@@ -11,12 +11,12 @@ var userController = {
     createUser: (req, res) => {
         const { errors, isValid } = validateRegisterInput(req.body);
         if (!isValid) {
-            console.log("Error occured")
+            console.log("Error occurred")
             return res.status(400).json(errors);
         }
         User.findOne({ email: req.body.email }).then(user => {
             if (user) {
-                return res.send("Email id already exists")
+                return res.status(400).json("Email id already exists")
             }
             else {
                 const newUser = new User({
@@ -57,7 +57,7 @@ var userController = {
         else {
             User.findOne({ email: req.body.email }).then(user => {
                 if (!user) {
-                    res.status(404).json("Email id doesnot exist")
+                    res.status(400).json("Email id does not exist")
                 }
                 else {
                     bcrypt.compare(req.body.password, user.password).then(isMatch => {
@@ -86,7 +86,7 @@ var userController = {
                             );
                         }
                         else {
-                            res.status(404).json("Invalid password")
+                            res.status(400).json("Invalid password")
                         }
                     });
                 }
